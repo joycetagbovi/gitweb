@@ -13,7 +13,7 @@ function Details() {
 
   return (
     
-    <Box py={4}>
+    <Box>
     {/* Header */}
     <Flex 
     justify='space-between' 
@@ -129,7 +129,7 @@ function Details() {
 </Flex>
     </Flex>
     {/* Indgredient */}
-    <Box py='40px'  px='20px'>
+    <Box pt='40px'  px='20px'>
     <Text
       color= '#000000'
       fontSize= '16px'
@@ -166,8 +166,9 @@ function Details() {
    </Flex>
    </Box>
    {/* Button */}
-   <Box px='20px'>
+   <Box px='20px' pt='60px'>
      <Button
+      onClick={() => alert('Order Placed Suceessful')}
      rightIcon={<FaChevronRight />}
      background= '#F5CA48'
      borderRadius={50}
@@ -175,7 +176,9 @@ function Details() {
      fontSize='14px'
      fontWeight='700'
      color='#000000'
+     transition='all 0.2s cubic-bezier(.08,.52,.52,1)'
      width='100%'
+     _hover={{ bg: '#000000', color:'#ffffff' }}
      >
      Place an order
      </Button>
