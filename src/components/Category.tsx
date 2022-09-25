@@ -27,7 +27,7 @@ function Category() {
          paddingX='10px'
          height='177px'
          width= '105px'
-         marginRight='40px'
+         marginRight='20px'
          marginBottom='5px'
         
         >

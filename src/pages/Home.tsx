@@ -9,21 +9,22 @@ import {Link } from 'react-router-dom'
 
 function Home() {
   return (
-    <Box >
+    <Box display={{base:'flex',md:'none'}}>
     <Container>
      <Header />
-     <Box marginTop='30px'>
+     {/* Food Topic */}
+     <Box mt='30px'>
      <Text 
       fontSize='16px' 
       color='#313234'
       fontWeight='400'
-      marginBottom='5px'>
+      mb='5px'>
         Food
     </Text>
      <Text fontSize='32px' 
      color='#313234'
      fontWeight='700'
-    marginBottom='5px'>
+     mb='5px'>
       Delivery
     </Text>
      </Box>
@@ -31,14 +32,13 @@ function Home() {
       <Flex>
         <Category/>
       </Flex>
-
-     
-      <Stack  marginTop='30px'>
+     {/* Food List */}
+      <Stack mt='30px'>
         <Text
          color= '#000000'
          fontSize= '16px'
          fontWeight= '700'
-         marginBottom= '10px'>
+         mb= '10px'>
          Popular
         </Text>
         {
@@ -50,11 +50,11 @@ function Home() {
                     shadow= 'lg'
                     height= '166px'
                     borderRadius='25px'
-                    marginBottom='20px'
+                    mb='20px'
                     flexDir='row'
-                    justifyContent={'space-between'}
-                    paddingTop= '20px'
-                    paddingLeft= '20px'
+                    justifyContent='space-between'
+                    pt= '20px'
+                    pl= '20px'
                    >
                    <Box>
                    <Flex alignItems='center'>
@@ -62,14 +62,14 @@ function Home() {
                    <FaCrown  />
                    </Box>
                    <Text
-                    marginLeft='5px'
+                    ml='5px'
                     fontSize='16px'
                     color= '#000000'
                     fontWeight='600'>
                       top of the week
                    </Text>
                    </Flex>
-                    <Box marginTop='15px'>
+                    <Box mt='15px'>
                     <Text
                       fontSize='16px'
                       color= '#313234'
@@ -77,7 +77,7 @@ function Home() {
                        {item.title}
                    </Text>
                     <Text
-                      marginTop='5ox'
+                      mt='5ox'
                       fontSize='12px'
                       color= '#C4C4C4'
                       fontWeight='500'>
@@ -88,12 +88,12 @@ function Home() {
                     <Flex
                       flexDirection= 'row'
                       alignItems= 'center'
-                      marginTop= '10px'
-                      marginLeft= '-20px'
+                      mt= '10px'
+                      ml= '-20px'
                     >
                        <Box
-                        paddingX = '40px'
-                        paddingY= '20px'
+                        px = '40px'
+                        py= '20px'
                         borderTopRightRadius= '25px'
                         borderBottomLeftRadius= '25px'
                         backgroundColor= '#F5CA48'
@@ -105,12 +105,12 @@ function Home() {
                        <Flex 
                         flexDirection = 'row'
                         alignItems = 'center'
-                        marginLeft = '20px' >
-                        <Box color='#000000' width='10px' >
+                        ml = '20px' >
+                        <Box color='#000000' fontSize='10px' >
                        <FaStar/>
                        </Box>
                        <Text
-                         marginLeft='10px'
+                         ml='10px'
                          fontSize='12px'
                          color= '#000000'
                          fontWeight='600'>{item.rating}</Text>
@@ -118,27 +118,21 @@ function Home() {
                     </Flex>
                     </Box>
            
-                    <Flex
-                     marginLeft = '40px'>
+                    <Flex ml='40px'>
                     <Image src={item.image}
                      width='210px'
                      height='125px'
-                    objectFit='contain'
-                    alt="pizza"
+                    objectFit='cover'
+                    objectPosition={'0 -50%'}
+                     alt={item.title}
                     />
                     </Flex>  
                    </Flex>
                    </Link>
                 )
-                })
-        }
-       
+                }) }
       </Stack>
-     
-     
      </Container>
-    
-
     </Box>
   )
 }

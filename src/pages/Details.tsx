@@ -1,24 +1,28 @@
 import React from 'react'
-import { Flex, Image,Box,Container,Stack,Text,Button } from '@chakra-ui/react'
+import { Flex, Image,Box,Stack,Text,Button } from '@chakra-ui/react'
 import {FaStar,FaChevronLeft,FaChevronRight} from 'react-icons/fa'
 import Data from '../dummy'
-import {useParams} from "react-router-dom"
+import {useParams, useNavigate} from "react-router-dom"
 
 
 
 function Details() {
     const {id} = useParams();
     const Food = Data.find((item) =>  (item.id) === (id))
-    console.log(id)
+    const navigate = useNavigate()
 
   return (
-    <Box >
-    <Container>
+    
+    <Box py={4}>
+    {/* Header */}
     <Flex 
     justify='space-between' 
     paddingTop='40px' 
-    alignItems='center'>
+    alignItems='center'
+    px='20px'
+    >
     <Flex
+     onClick={() => navigate(-1)}
      boxSize='40px'
      border='2px'
      borderColor='#CDCDCD'
@@ -41,29 +45,31 @@ function Details() {
     <FaStar />
     </Flex>
    </Flex>
-    <Stack>
+     {/* Food Details */}
+    <Stack >
     {Food?.id}
-    <Box marginTop='30px'>
+    <Box mt='30px' px='20px'>
     <Text 
      fontSize='32px' 
      color='#313234'
      fontWeight='700'
      width='172px'
-    marginBottom='5px'>
+    mb='5px'>
    {Food?.title}
     </Text>
     <Text
      fontSize='32px' 
      color='#E4723C'
      fontWeight='700'
-     marginBottom='5px'
+     mb='5px'
     >
     ${Food?.price}
     </Text>
     </Box>
-    <Flex justifyContent='space-between' alignItems='center'>
-     <Stack marginTop='30px'>
-     <Box marginTop='20px'>
+    {/* Food Wrapper */}
+    <Flex justifyContent='space-between' alignItems='center' pl='20px' mt='30px'>
+     <Stack  w='120px'>
+     <Box mt='20px'>
      <Text
      fontSize='14px'
      fontWeight='500'
@@ -78,7 +84,7 @@ function Details() {
     {Food?.sizeName}
     </Text>
      </Box>
-     <Box marginTop='20px'>
+     <Box mt='20px'>
      <Text
      fontSize='14px'
      fontWeight='500'
@@ -93,7 +99,7 @@ function Details() {
     {Food?.crust}
     </Text>
      </Box>
-     <Box marginTop='20px'>
+     <Box mt='20px'>
      <Text
      fontSize='14px'
      fontWeight='500'
@@ -109,21 +115,26 @@ function Details() {
     </Text>
      </Box>
      </Stack>
+    {/* Item Image */}
+     <Flex ml='50px'>
     <Image 
     src={Food?.image}
     alt={Food?.title}
     width='296px'
     height='176px'
-    objectFit='contain'
-    overflow='hidden'
+    objectFit='cover'
+    objectPosition={'0 -100%'}
+    mt='30px'
 />
+</Flex>
     </Flex>
-    <Box pt='40px' pb='40px'>
+    {/* Indgredient */}
+    <Box py='40px'  px='20px'>
     <Text
       color= '#000000'
       fontSize= '16px'
       fontWeight= '700'
-      marginBottom= '10px'>
+      mb= '10px'>
       Ingredients
       </Text>
    <Flex>
@@ -136,7 +147,7 @@ function Details() {
             borderRadius={15}
             shadow='md'
             paddingX='10px'
-            marginRight='15px'
+            mr='15px'
             alignItems='center'
             display='flex'
             justifyContent='center'
@@ -154,7 +165,8 @@ function Details() {
     }
    </Flex>
    </Box>
-   
+   {/* Button */}
+   <Box px='20px'>
      <Button
      rightIcon={<FaChevronRight />}
      background= '#F5CA48'
@@ -163,13 +175,14 @@ function Details() {
      fontSize='14px'
      fontWeight='700'
      color='#000000'
+     width='100%'
      >
      Place an order
      </Button>
-   
+     </Box>
     </Stack>
-    </Container>
     </Box>
+ 
   )
 }
 
