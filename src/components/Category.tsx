@@ -5,7 +5,7 @@ import { FaChevronRight} from 'react-icons/fa'
 
 function Category() {
   return (
-    <Flex flexDir={'column'} marginTop='30px' pl='20px'>
+    <Flex flexDir={'column'} marginTop='30px' pl='20px'  overflowX='scroll' >
     <Text
       color= '#000000'
       fontSize= '16px'
@@ -13,9 +13,10 @@ function Category() {
       marginBottom= '10px'>
       Category
       </Text>
-    <Flex >
+    <Flex>
      {categoriesData.map((item) => {
         return (
+        <Box mr='20px'>
         <Box key={item.id}
          background={ item.selected ? '#F5CA48' : '#ffffff'}
          shadow='md'
@@ -27,7 +28,6 @@ function Category() {
          px='10px'
          height='177px'
          width= '105px'
-         mr='10px'
          mb='5px'
         
         >
@@ -58,6 +58,7 @@ function Category() {
          >
          <FaChevronRight />
         </Flex>
+        </Box>
         </Box>
         )
      })
