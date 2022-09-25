@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
-import { Box, Container, Text, Flex, Stack,Image, } from '@chakra-ui/react'
+import { Box,  Text, Flex, Stack,Image, } from '@chakra-ui/react'
 import Search from '../components/Search'
 import { FaCrown,FaPlus,FaStar }  from 'react-icons/fa'
 import Data from '../dummy'
@@ -9,11 +9,18 @@ import {Link } from 'react-router-dom'
 
 function Home() {
   return (
-    <Box display={{base:'flex',md:'none'}}>
-    <Container>
+    <>
+    <Flex 
+     justifyContent='center'
+     pt='20'
+     display={{base:'none',md:'flex'}}
+     >
+      <Text> ** Desktop Version Disabled Mobile View Only **</Text>
+    </Flex>
+    <Box display={{base:'block',md:'none'}}>
      <Header />
      {/* Food Topic */}
-     <Box mt='30px'>
+     <Box mt='30px' px='20px'>
      <Text 
       fontSize='16px' 
       color='#313234'
@@ -33,7 +40,7 @@ function Home() {
         <Category/>
       </Flex>
      {/* Food List */}
-      <Stack mt='30px'>
+      <Stack mt='30px' px='20px'>
         <Text
          color= '#000000'
          fontSize= '16px'
@@ -132,8 +139,8 @@ function Home() {
                 )
                 }) }
       </Stack>
-     </Container>
     </Box>
+    </>
   )
 }
 
