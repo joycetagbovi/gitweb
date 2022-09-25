@@ -137,9 +137,10 @@ function Details() {
       mb= '10px'>
       Ingredients
       </Text>
-   <Flex>
+   <Flex  overflowX='scroll' >
     {Food?.ingredients.map((item)  => {
         return(
+          <Box mr='15px' mb='10px'>
             <Box
             width='100px'
             height='80px'
@@ -150,7 +151,6 @@ function Details() {
             display='flex'
             justifyContent='center'
             key={item.id}
-            mr='15px'
             px='20px'
             >
             <Image 
@@ -160,13 +160,14 @@ function Details() {
             objectFit='contain'
             />
             </Box>
+            </Box>
         )
     })
     }
    </Flex>
    </Box>
    {/* Button */}
-   <Box px='20px' py='60px'>
+   <Box px='20px' py='50px'>
      <Button
       onClick={() => alert('Order Placed Suceessful')}
      rightIcon={<FaChevronRight />}
