@@ -4,7 +4,7 @@ import { BiSearch} from 'react-icons/bi'
 
 function Search() {
   return (
-    <Stack spacing={4}>
+    <Stack spacing={4} px='20px'>
   <InputGroup
    alignItems='center'
   >
