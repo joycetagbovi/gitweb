@@ -5,7 +5,8 @@ export default function Header() {
   return (
    <Flex 
     justify='space-between' 
-    paddingTop='40px' 
+    pt='30px' 
+    px='20px'
     alignItems='center'>
    <Image 
      borderRadius='full'
