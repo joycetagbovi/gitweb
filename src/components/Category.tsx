@@ -5,7 +5,7 @@ import { FaChevronRight} from 'react-icons/fa'
 
 function Category() {
   return (
-    <Flex flexDir={'column'} marginTop='30px'>
+    <Flex flexDir={'column'} marginTop='30px' pl='20px'>
     <Text
       color= '#000000'
       fontSize= '16px'
@@ -24,11 +24,11 @@ function Category() {
          flexDir='column'
          alignItems='center'
          justifyContent='center'
-         paddingX='10px'
+         px='10px'
          height='177px'
          width= '105px'
-         marginRight='20px'
-         marginBottom='5px'
+         mr='10px'
+         mb='5px'
         
         >
         <Image 
