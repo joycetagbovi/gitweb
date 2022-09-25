@@ -13,11 +13,11 @@ function Details() {
 
   return (
     
-    <Box>
+    <Box display={{base:'block',md:'none'}}>
     {/* Header */}
     <Flex 
     justify='space-between' 
-    paddingTop='40px' 
+    paddingTop='30px' 
     alignItems='center'
     px='20px'
     >
@@ -129,7 +129,7 @@ function Details() {
 </Flex>
     </Flex>
     {/* Indgredient */}
-    <Box pt='40px'  px='20px'>
+    <Box pt='40px'  pl='20px'>
     <Text
       color= '#000000'
       fontSize= '16px'
@@ -146,12 +146,12 @@ function Details() {
             background='#ffffff'
             borderRadius={15}
             shadow='md'
-            paddingX='10px'
-            mr='15px'
             alignItems='center'
             display='flex'
             justifyContent='center'
             key={item.id}
+            mr='15px'
+            px='20px'
             >
             <Image 
             src={item.image} 
@@ -166,7 +166,7 @@ function Details() {
    </Flex>
    </Box>
    {/* Button */}
-   <Box px='20px' pt='60px'>
+   <Box px='20px' py='60px'>
      <Button
       onClick={() => alert('Order Placed Suceessful')}
      rightIcon={<FaChevronRight />}
