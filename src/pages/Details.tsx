@@ -17,7 +17,7 @@ function Details() {
     {/* Header */}
     <Flex 
     justify='space-between' 
-    paddingTop='30px' 
+    py='30px' 
     alignItems='center'
     px='20px'
     >
